@@ -15,22 +15,6 @@
     }
 
     body {
-      --bg: #fff;
-      --textNormal: #222;
-      --textTitle: #222;
-      --textLink: #00f;
-      --brand: url(images/realvjy-white.png) top right/112px 21px no-repeat;
-      --hr: rgba(0, 0, 0, 0.2);
-
-      background-color: var(--bg);
-      --image-filter: invert(0);
-      --native: #000;
-      --border-alpha: hsla(0, 0, 0, 0.1)
-    }
-
-    body.dark {
-      -webkit-font-smoothing: antialiased;
-
       --bg: #000;
       --textNormal: hsla(0, 0%, 100%, 0.88);
       --textTitle: #fff;
@@ -38,8 +22,23 @@
       --brand: url(images/realvjy-black.png) top right/112px 21px no-repeat;
       --hr: hsla(0, 0%, 100%, 0.2);
 
+      background-color: var(--bg);
       --image-filter: invert(1);
       --native: #fff;
+      --border-alpha: hsla(0, 0, 0, 0.1)
+    }
+
+    body.dark {
+      -webkit-font-smoothing: antialiased;
+      --bg: #fff;
+      --textNormal: #222;
+      --textTitle: #222;
+      --textLink: #00f;
+      --brand: url(images/realvjy-white.png) top right/112px 21px no-repeat;
+      --hr: rgba(0, 0, 0, 0.2);
+
+      --image-filter: invert(0);
+      --native: #000;
       --border-alpha: rgba(0, 0%, 100%, 0.1)
     }
 
@@ -2017,44 +2016,27 @@
   <link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="light">
   <script>
-    
-  void function() {
-      window.__onThemeChange = function() {}
-
-      var preferredTheme
-      try {
-        preferredTheme = localStorage.getItem('theme')
-      } catch (err) { }
-
-      function setTheme(newTheme) {
-        if (preferredTheme && document.body.classList.contains(preferredTheme)) {
-          document.body.classList.replace(preferredTheme, newTheme)
-        } else {
-          document.body.classList.add(newTheme)
-        }
-
-        window.__theme = newTheme
-        preferredTheme = newTheme
-        window.__onThemeChange(newTheme)
+    if (localStorage.getItem("theme") === "light"){
+      //document.querySelector('#dmode').checked = false;
+      document.body.classList['value'] = "light";
+    } else{
+      //document.getElementById('dmode').click();
+      //document.querySelector('#dmode').checked = true;
+      document.body.classList['value'] = "light dark";
+    }
+  </script>
+  <script>
+     function modec() {
+      var element = document.body;
+      element.classList.toggle("dark");
+      if (document.body.classList['value'] == "light dark"){
+        localStorage.setItem("theme", "light dark");
+      } else {
+        localStorage.setItem("theme", "light");
       }
-
-      window.__setPreferredTheme = function(newTheme) {
-        setTheme(newTheme)
-        try {
-          localStorage.setItem('theme', newTheme)
-        } catch (err) {}
-      }
-
-      var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
-      darkQuery.addListener(function(e) {
-        window.__setPreferredTheme(e.matches ? 'dark' : 'light')
-      })
-
-      setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
-    }()
-      
+     }
   </script>
   <div id="___gatsby">
     <div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper">
@@ -2105,7 +2087,7 @@
                   </ul>
                   <div class="mode-toggle">
                     <label>
-                      <input type="checkbox" id="dmode" checked>
+                      <input onchange="modec()" type="checkbox" id="dmode">
                     </label>
                   </div>
                 </div>
