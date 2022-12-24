@@ -170,23 +170,20 @@
 
           /* Removes native scrollbar */
           .no-scrollbar {
-            -ms-overflow-style: none; // IE 10+
-            overflow: -moz-scrollbars-none; // Firefox
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
           }
 
           .no-scrollbar::-webkit-scrollbar {
-            display: none; // Safari and Chrome
+            display: none;
           }
         </style>
       </div>
       <div class="div-block">
         <div class="container w-container">
           <div class="text-block-21">
-            <strong class="bold-text">USD$200 off Tier 7 👉 Use code </strong>
-            <span class="text-span">
-              <strong>200TIER7</strong>
-            </span>
-            <strong class="bold-text-2"> at checkout (Offer expires on Dec 28, 2022)</strong>
+            <strong class="bold-text">USD$200 OFF Tier 7 🎉 $ ̶1̶3̶0̶0̶  $1,100 New year sale </strong>
+            <strong class="bold-text-2">(Offer expires on Jan 28, 2023)</strong>
             <br />
           </div>
         </div>
@@ -884,9 +881,48 @@
                                 </div>
                               </div>
                             </div>
-                            <a href="https://steemed.gumroad.com/l/tier9" data-gumroad-overlay-checkout="true" class="button is-button-large background-color-success600 w-inline-block">
-                              <div>Place order</div>
-                            </a>
+                            <div id="smart-button-container">
+                              <div style="text-align: center;">
+                                <div id="paypal-button-container-9"></div>
+                              </div>
+                            </div>
+                            <script src="https://www.paypal.com/sdk/js?client-id=AVyOiBeKKi19_fLEUAausVmF0-WrkCKRZP472WFpMKjH_0q8ZN5a7z2ACZyYKCFFR8VZPAOkHVXbJZv7&enable-funding=paylater&currency=USD" data-sdk-integration-source="button-factory"></script>
+                            <script>
+                              function initPayPalButton() {
+                                paypal.Buttons({
+                                  style: {
+                                    shape: 'rect',
+                                    color: 'blue',
+                                    layout: 'vertical',
+                                    label: 'paypal',
+                                    
+                                  },
+                          
+                                  createOrder: function(data, actions) {
+                                    return actions.order.create({
+                                      purchase_units: [{"description":"Steemed Tier 9","amount":{"currency_code":"USD","value":450}}]
+                                    });
+                                  },
+                          
+                                  onApprove: function(data, actions) {
+                                    return actions.order.capture().then(function(orderData) {
+                                      
+                                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                          
+                                      const element = document.getElementById('paypal-button-container-9');
+                                      element.innerHTML = '';
+                                      element.innerHTML = '<h3>Processing your order! Wait for our email</h3>';
+                                      
+                                    });
+                                  },
+                          
+                                  onError: function(err) {
+                                    console.log(err);
+                                  }
+                                }).render('#paypal-button-container-9');
+                              }
+                              initPayPalButton();
+                            </script>
                           </div>
                           <div class="pricing_popular-label"></div>
                         </div>
@@ -931,9 +967,47 @@
                                 </div>
                               </div>
                             </div>
-                            <a href="https://steemed.gumroad.com/l/tier8" data-gumroad-overlay-checkout="true" class="button is-button-large background-color-success600 w-inline-block">
-                              <div>Place order</div>
-                            </a>
+                            <div id="smart-button-container">
+                              <div style="text-align: center;">
+                                <div id="paypal-button-container-8"></div>
+                              </div>
+                            </div>
+                            <script>
+                              function initPayPalButton() {
+                                paypal.Buttons({
+                                  style: {
+                                    shape: 'rect',
+                                    color: 'blue',
+                                    layout: 'vertical',
+                                    label: 'paypal',
+                                    
+                                  },
+                          
+                                  createOrder: function(data, actions) {
+                                    return actions.order.create({
+                                      purchase_units: [{"description":"Steemed Tier 8","amount":{"currency_code":"USD","value":850}}]
+                                    });
+                                  },
+                          
+                                  onApprove: function(data, actions) {
+                                    return actions.order.capture().then(function(orderData) {
+                                      
+                                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                          
+                                      const element = document.getElementById('paypal-button-container-8');
+                                      element.innerHTML = '';
+                                      element.innerHTML = '<h3>Processing your order! Wait for our email</h3>';
+                                      
+                                    });
+                                  },
+                          
+                                  onError: function(err) {
+                                    console.log(err);
+                                  }
+                                }).render('#paypal-button-container-8');
+                              }
+                              initPayPalButton();
+                            </script>
                           </div>
                           <div class="pricing_popular-label"></div>
                         </div>
@@ -974,9 +1048,47 @@
                                 </div>
                               </div>
                             </div>
-                            <a href="https://steemed.gumroad.com/l/tier7" data-gumroad-overlay-checkout="true" class="button is-button-large background-color-success600 w-inline-block">
-                              <div>Place order</div>
-                            </a>
+                            <div id="smart-button-container">
+                              <div style="text-align: center;">
+                                <div id="paypal-button-container-7"></div>
+                              </div>
+                            </div>
+                            <script>
+                              function initPayPalButton() {
+                                paypal.Buttons({
+                                  style: {
+                                    shape: 'rect',
+                                    color: 'blue',
+                                    layout: 'vertical',
+                                    label: 'paypal',
+                                    
+                                  },
+                          
+                                  createOrder: function(data, actions) {
+                                    return actions.order.create({
+                                      purchase_units: [{"description":"Steemed Tier 7","amount":{"currency_code":"USD","value":1300}}]
+                                    });
+                                  },
+                          
+                                  onApprove: function(data, actions) {
+                                    return actions.order.capture().then(function(orderData) {
+                                      
+                                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                          
+                                      const element = document.getElementById('paypal-button-container-7');
+                                      element.innerHTML = '';
+                                      element.innerHTML = '<h3>Processing your order! Wait for our email</h3>';
+                                      
+                                    });
+                                  },
+                          
+                                  onError: function(err) {
+                                    console.log(err);
+                                  }
+                                }).render('#paypal-button-container-7');
+                              }
+                              initPayPalButton();
+                            </script>
                           </div>
                           <div class="pricing_popular-label">
                             <div class="badge is-primary">
@@ -1036,9 +1148,47 @@
                                 </div>
                               </div>
                             </div>
-                            <a href="https://steemed.gumroad.com/l/tier6" data-gumroad-overlay-checkout="true" class="button is-button-large background-color-success600 w-inline-block">
-                              <div>Place order</div>
-                            </a>
+                            <div id="smart-button-container">
+                              <div style="text-align: center;">
+                                <div id="paypal-button-container-6"></div>
+                              </div>
+                            </div>
+                            <script>
+                              function initPayPalButton() {
+                                paypal.Buttons({
+                                  style: {
+                                    shape: 'rect',
+                                    color: 'blue',
+                                    layout: 'vertical',
+                                    label: 'paypal',
+                                    
+                                  },
+                          
+                                  createOrder: function(data, actions) {
+                                    return actions.order.create({
+                                      purchase_units: [{"description":"Steemed Tier 6","amount":{"currency_code":"USD","value":1800}}]
+                                    });
+                                  },
+                          
+                                  onApprove: function(data, actions) {
+                                    return actions.order.capture().then(function(orderData) {
+                                      
+                                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                          
+                                      const element = document.getElementById('paypal-button-container-6');
+                                      element.innerHTML = '';
+                                      element.innerHTML = '<h3>Processing your order! Wait for our email</h3>';
+                                      
+                                    });
+                                  },
+                          
+                                  onError: function(err) {
+                                    console.log(err);
+                                  }
+                                }).render('#paypal-button-container-6');
+                              }
+                              initPayPalButton();
+                            </script>
                           </div>
                           <div class="pricing_popular-label"></div>
                         </div>
@@ -1087,9 +1237,47 @@
                                 </div>
                               </div>
                             </div>
-                            <a href="https://steemed.gumroad.com/l/tier5" data-gumroad-overlay-checkout="true" class="button is-button-large background-color-success600 w-inline-block">
-                              <div>Place order</div>
-                            </a>
+                            <div id="smart-button-container">
+                              <div style="text-align: center;">
+                                <div id="paypal-button-container-5"></div>
+                              </div>
+                            </div>
+                            <script>
+                              function initPayPalButton() {
+                                paypal.Buttons({
+                                  style: {
+                                    shape: 'rect',
+                                    color: 'blue',
+                                    layout: 'vertical',
+                                    label: 'paypal',
+                                    
+                                  },
+                          
+                                  createOrder: function(data, actions) {
+                                    return actions.order.create({
+                                      purchase_units: [{"description":"Steemed Tier 5","amount":{"currency_code":"USD","value":2800}}]
+                                    });
+                                  },
+                          
+                                  onApprove: function(data, actions) {
+                                    return actions.order.capture().then(function(orderData) {
+                                      
+                                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                          
+                                      const element = document.getElementById('paypal-button-container-5');
+                                      element.innerHTML = '';
+                                      element.innerHTML = '<h3>Processing your order! Wait for our email</h3>';
+                                      
+                                    });
+                                  },
+                          
+                                  onError: function(err) {
+                                    console.log(err);
+                                  }
+                                }).render('#paypal-button-container-5');
+                              }
+                              initPayPalButton();
+                            </script>
                           </div>
                           <div class="pricing_popular-label"></div>
                         </div>
@@ -1138,9 +1326,47 @@
                                 </div>
                               </div>
                             </div>
-                            <a href="./checkout/tier4" class="button is-button-large background-color-success600 w-inline-block">
-                              <div>Place order</div>
-                            </a>
+                            <div id="smart-button-container">
+                              <div style="text-align: center;">
+                                <div id="paypal-button-container-4"></div>
+                              </div>
+                            </div>
+                            <script>
+                              function initPayPalButton() {
+                                paypal.Buttons({
+                                  style: {
+                                    shape: 'rect',
+                                    color: 'blue',
+                                    layout: 'vertical',
+                                    label: 'paypal',
+                                    
+                                  },
+                          
+                                  createOrder: function(data, actions) {
+                                    return actions.order.create({
+                                      purchase_units: [{"description":"Steemed Tier 4","amount":{"currency_code":"USD","value":7600}}]
+                                    });
+                                  },
+                          
+                                  onApprove: function(data, actions) {
+                                    return actions.order.capture().then(function(orderData) {
+                                      
+                                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                          
+                                      const element = document.getElementById('paypal-button-container-4');
+                                      element.innerHTML = '';
+                                      element.innerHTML = '<h3>Processing your order! Wait for our email</h3>';
+                                      
+                                    });
+                                  },
+                          
+                                  onError: function(err) {
+                                    console.log(err);
+                                  }
+                                }).render('#paypal-button-container-4');
+                              }
+                              initPayPalButton();
+                            </script>
                           </div>
                           <div class="pricing_popular-label">
                             <div class="badge is-primary">
@@ -1175,9 +1401,47 @@
                                 </div>
                               </div>
                             </div>
-                            <a href="./checkout/tier3" class="button is-button-large background-color-success600 w-inline-block">
-                              <div>Place order</div>
-                            </a>
+                            <div id="smart-button-container">
+                              <div style="text-align: center;">
+                                <div id="paypal-button-container-3"></div>
+                              </div>
+                            </div>
+                            <script>
+                              function initPayPalButton() {
+                                paypal.Buttons({
+                                  style: {
+                                    shape: 'rect',
+                                    color: 'blue',
+                                    layout: 'vertical',
+                                    label: 'paypal',
+                                    
+                                  },
+                          
+                                  createOrder: function(data, actions) {
+                                    return actions.order.create({
+                                      purchase_units: [{"description":"Steemed Tier 3","amount":{"currency_code":"USD","value":10800}}]
+                                    });
+                                  },
+                          
+                                  onApprove: function(data, actions) {
+                                    return actions.order.capture().then(function(orderData) {
+                                      
+                                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                          
+                                      const element = document.getElementById('paypal-button-container-3');
+                                      element.innerHTML = '';
+                                      element.innerHTML = '<h3>Processing your order! Wait for our email</h3>';
+                                      
+                                    });
+                                  },
+                          
+                                  onError: function(err) {
+                                    console.log(err);
+                                  }
+                                }).render('#paypal-button-container-3');
+                              }
+                              initPayPalButton();
+                            </script>
                           </div>
                           <div class="pricing_popular-label">
                             <div class="badge is-primary">
@@ -1212,9 +1476,47 @@
                                 </div>
                               </div>
                             </div>
-                            <a href="./checkout/tier2" class="button is-button-large background-color-success600 w-inline-block">
-                              <div>Place order</div>
-                            </a>
+                            <div id="smart-button-container">
+                              <div style="text-align: center;">
+                                <div id="paypal-button-container-2"></div>
+                              </div>
+                            </div>
+                            <script>
+                              function initPayPalButton() {
+                                paypal.Buttons({
+                                  style: {
+                                    shape: 'rect',
+                                    color: 'blue',
+                                    layout: 'vertical',
+                                    label: 'paypal',
+                                    
+                                  },
+                          
+                                  createOrder: function(data, actions) {
+                                    return actions.order.create({
+                                      purchase_units: [{"description":"Steemed Tier 2","amount":{"currency_code":"USD","value":13500}}]
+                                    });
+                                  },
+                          
+                                  onApprove: function(data, actions) {
+                                    return actions.order.capture().then(function(orderData) {
+                                      
+                                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                          
+                                      const element = document.getElementById('paypal-button-container-2');
+                                      element.innerHTML = '';
+                                      element.innerHTML = '<h3>Processing your order! Wait for our email</h3>';
+                                      
+                                    });
+                                  },
+                          
+                                  onError: function(err) {
+                                    console.log(err);
+                                  }
+                                }).render('#paypal-button-container-2');
+                              }
+                              initPayPalButton();
+                            </script>
                           </div>
                           <div class="pricing_popular-label">
                             <div class="badge is-primary">
@@ -1251,9 +1553,47 @@
                                 </div>
                               </div>
                             </div>
-                            <a href="./checkout/tier1" class="button is-button-large background-color-success600 w-inline-block">
-                              <div>Place order</div>
-                            </a>
+                            <div id="smart-button-container">
+                              <div style="text-align: center;">
+                                <div id="paypal-button-container-1"></div>
+                              </div>
+                            </div>
+                            <script>
+                              function initPayPalButton() {
+                                paypal.Buttons({
+                                  style: {
+                                    shape: 'rect',
+                                    color: 'blue',
+                                    layout: 'vertical',
+                                    label: 'paypal',
+                                    
+                                  },
+                          
+                                  createOrder: function(data, actions) {
+                                    return actions.order.create({
+                                      purchase_units: [{"description":"Steemed Tier 1","amount":{"currency_code":"USD","value":40000}}]
+                                    });
+                                  },
+                          
+                                  onApprove: function(data, actions) {
+                                    return actions.order.capture().then(function(orderData) {
+                                      
+                                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                          
+                                      const element = document.getElementById('paypal-button-container-1');
+                                      element.innerHTML = '';
+                                      element.innerHTML = '<h3>Processing your order! Wait for our email</h3>';
+                                      
+                                    });
+                                  },
+                          
+                                  onError: function(err) {
+                                    console.log(err);
+                                  }
+                                }).render('#paypal-button-container-1');
+                              }
+                              initPayPalButton();
+                            </script>
                           </div>
                           <div class="pricing_popular-label">
                             <div class="badge is-primary">
